@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
+import EmployeeService from '../services/EmployeeService'
 
 export default class ListEmployeeComponent extends Component {
 constructor(props){
 super(props)
 this.state={
-employees:[
-    {
-        id: 1,
-        firstName: "Dilak",
-        lastName: "shan",
-        emailId: "dilax@gmail.com"
-    }]
+employees:[]
 }
+}
+
+componentDidMount(){
+    EmployeeService.getEmployees().then((res)=>{
+this.setState({employees:res.data});
+    });
 }
 
     render() {
