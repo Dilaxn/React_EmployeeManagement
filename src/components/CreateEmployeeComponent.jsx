@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import EmployeeService from "../services/EmployeeService";
 
 class CreateEmployeeComponent extends Component {
     constructor(props) {
@@ -18,6 +19,11 @@ class CreateEmployeeComponent extends Component {
         event.preventDefault();
         let employee= {firstName: this.state.firstName, lastName: this.state.lastName,emailId:this.state.emailId};
         console.log(employee);
+        // eslint-disable-next-line no-undef
+        EmployeeService.createEmployee(employee).then(() => {
+            this.props.history.push("/employees");
+
+        })
     }
     cancel(){
         this.props.history.push("/employees");
