@@ -17,7 +17,7 @@ class UpdateEmployeeComponent extends Component {
 
     }
     componentDidMount() {
-        EmployeeService.getEmployeeById(this.state.id).then((res)=>{
+        EmployeeService.getEmployee(this.state.id).then((res)=>{
             let employee = res.data;
             this.setState({
                 firstName: employee.firstName,
@@ -31,6 +31,9 @@ class UpdateEmployeeComponent extends Component {
         event.preventDefault();
         let employee= {firstName: this.state.firstName, lastName: this.state.lastName,emailId:this.state.emailId};
         console.log(employee);
+        EmployeeService.updateEmployee(employee,this.state.id).then((res)=>{
+            this.props.history.push("/employees")
+        })
         // eslint-disable-next-line no-undef
 
     }
