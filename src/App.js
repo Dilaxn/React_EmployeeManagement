@@ -11,8 +11,9 @@ function App() {
     return (
         <div>
             <Router>
+                <HeaderComponent/>
                 <div className="container">
-                    <HeaderComponent/>
+
                     <div className="container">
                         <Switch>
                             <Route path="/" exact component={ListEmployeeComponent}/>
@@ -25,7 +26,7 @@ function App() {
 
                         </Switch>
                     </div>
-                    <FooterComponent/>
+                    {/*<FooterComponent/>*/}
                 </div>
             </Router>
         </div>

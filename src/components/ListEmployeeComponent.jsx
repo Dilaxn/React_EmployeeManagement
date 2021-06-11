@@ -35,7 +35,7 @@ export default class ListEmployeeComponent extends Component {
         return (
             <div>
                 <div>
-                    <button onClick={this.addEmployee}>Add Employee</button>
+                    <button style={{marginTop:"20px"}} onClick={this.addEmployee}>Add Employee</button>
                 </div>
                 <h2 className="text-center">Employee List</h2>
                 <div className="row">
@@ -61,7 +61,7 @@ export default class ListEmployeeComponent extends Component {
                                             <button className="btn btn-info" onClick={()=>{
                                                 this.editEmployee(employee.id)
                                             }}>Update</button>
-                                            <button className="btn btn-danger" onClick={()=>{
+                                            <button style={{marginLeft:"10px"}} className="btn btn-danger" onClick={()=>{
                                                 this.deleteEmployee(employee.id)
                                             }}>Delete</button>
                                         </td>
